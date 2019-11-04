@@ -1,5 +1,11 @@
 @import './reset.css';
 
+/* Variables */
+
+:root {
+    --custom-gap: 3px;
+}
+
 
 /* Common  base styling */
 
@@ -24,8 +30,37 @@ body > footer {
     flex-shrink: 0;
 }
 
+/* Positioning */
 
+body {
+    padding: var(--custom-gap);
+    /* align-items: center; */
+}
+
+body > header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-nav {
+    order: 1;
+}
+
+.logo {
+    order: 2;
+}
+
+.main-nav ul,
+.add-nav ul {
+    display: flex;
+}
+
+footer > .social {
+    display: flex;
+    justify-content: flex-end;
+}
 
 .social img {
-    max-width: 50px;
+    width: 50px;
 }
