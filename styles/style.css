@@ -1,2 +1,31 @@
-@import './reset.css'
+@import './reset.css';
 
+
+/* Common  base styling */
+
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body > .content {
+    flex: 1 0 auto;
+}
+
+body > footer {
+    flex-shrink: 0;
+}
+
+
+
+.social img {
+    max-width: 50px;
+}
