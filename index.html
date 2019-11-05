@@ -8,22 +8,19 @@
     <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    <!-- <div class="wrap"> -->
-    <header>
-        <div class="wrap">
+    <div class="wrap">
+        <header class="page-head">
             <nav class="main-nav">
                 <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Pictures</a></li>
-                    <li><a href="#">Stuff</a></li>
-                    <li><a href="#">About</a></li>
+                    <li class="main-nav__item home"><a href="#">Home</a></li>
+                    <li class="main-nav__item pic"><a href="#">Pictures</a></li>
+                    <li class="main-nav__item stuff"><a href="#">Stuff</a></li>
+                    <li class="main-nav__item about"><a href="#">About</a></li>
                 </ul>
             </nav>
-            <div class="logo">logo</div>
-        </div>
-    </header>
-    <section class="content">
-        <div class="wrap">
+            <div class="logo page-head__logo">logo</div>
+        </header>
+        <main class="content">
             <header class="page-header">
                 <h1>Heading</h1>
                 <p>Jumbotron</p>
@@ -35,7 +32,7 @@
                     <input type="submit" name="subscribe">
                 </form>
             </section>
-            <main>
+            <section class="articles">
                 <article class="info">
                     <h2>Some info</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ullam fugit, debitis aliquam totam quasi, consectetur qui facilis officia sunt non nobis voluptatibus et accusantium excepturi laborum? Harum, perferendis blanditiis?</p>
@@ -48,10 +45,9 @@
                     <h2>Hello you</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus ullam fugit, debitis aliquam totam quasi, consectetur qui facilis officia sunt non nobis voluptatibus et accusantium excepturi laborum? Harum, perferendis blanditiis?</p>
                 </article>
-            </main>
-        </div>
-    </section>
-    <!-- </div> -->
+            </section>
+        </main>
+    </div>
     <footer>
         <div class="wrap">
             <section class="company">
