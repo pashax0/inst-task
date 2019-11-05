@@ -1,0 +1,30 @@
+/* Common styling */
+
+* {
+    box-sizing: border-box;
+}
+
+
+html, body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+body > .content {
+    flex: 1 0 auto;
+    justify-content: center;
+}
+
+body > footer {
+    flex-shrink: 0;
+}
+
+.wrap {
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: var(--custom-gap);
+}
