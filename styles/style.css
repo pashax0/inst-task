@@ -253,7 +253,8 @@ h4 {
     text-transform: uppercase;
 }
 
-.page-head a {
+.page-head a,
+.company .add-nav a {
     margin: 0 0.6rem;
     color: white;
 }
@@ -264,11 +265,13 @@ body.home .home a,
     color: black;
 }
 
-.page-head .main-nav li::before {
+.page-head .main-nav li::before,
+.company .add-nav li::before {
     content: '|';
 }
 
-.page-head .main-nav li:first-child::before {
+.page-head .main-nav li:first-child::before,
+.company .add-nav li:first-child::before {
     content: none;
 }
 
