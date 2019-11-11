@@ -484,3 +484,17 @@ footer .soc-icons a {
         content: url('../assets/images/info-circle-solid.svg');
     }
 }
+
+
+/* IE 10, 11 bugs */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body > .wrap,
+    .content .search {
+        display: block;
+    }
+
+    .content article {
+        display: inline-block;
+        max-width: 100%;
+    }
+}
