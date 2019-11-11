@@ -11,6 +11,7 @@ body {
 
 body > .wrap {
     width: 100%;
+    padding: var(--custom-gap);
     flex-grow: 1;
     display: flex;
     flex-wrap: wrap;
@@ -19,8 +20,7 @@ body > .wrap {
 }
 
 body > header,
-body > .wrap > header,
-body > footer {
+body > .wrap > header {
     background-color: var(--color-red);
 }
 
@@ -56,10 +56,11 @@ article {
 }
 
 .page-header h1 {
-    margin-bottom: 3rem;
+    margin: 5px;
 }
 
 .main-nav {
+    margin-bottom: 1rem;
     flex-grow: 1;
 }
 
@@ -147,7 +148,10 @@ article {
     order: 2;
 }
 
+/* Search block */
+
 .search {
+    margin-bottom: 2rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -155,24 +159,36 @@ article {
 }
 
 .search form {
-    /* flex-basis: var(--block-width); */
-    flex-grow: 1;
+    max-width: 490px;
     display: flex;
-    flex-wrap: wrap;
-    /* justify-content: flex-end; */
-}
-
-.search > form p {
+    justify-content: space-between;
     flex-grow: 1;
 }
 
-input[type="search"] {
-    flex-basis: var(--block-width);
+.search > p {
     flex-grow: 1;
-    /* max-width: var(--block-width); */
+    margin-bottom: 1rem;
 }
 
-@media screen and (min-width: 725px) {
+.search input[type="search"] {
+    max-width: 350px;
+    flex-basis: 350px;
+    border: 2px solid black;
+}
+
+.search input[type="submit"] {
+    padding: 0 1rem;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+@media screen and (min-width: 662px) {
+    .search > p {
+        max-width: 280px;
+    }
+}
+
+@media screen and (min-width: 730px) {
     .articles article {
         margin-left: 0;
         margin-right: 0;
@@ -196,12 +212,22 @@ input[type="search"] {
 
 /* Footer positioning */
 
-body > footer,
+body > footer {
+    padding: var(--custom-gap);
+    padding-top: 0;
+    /* width: 100%; */
+}
+
 body > footer .wrap {
-    width: 100%;
+    padding-top: 1rem;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    border-top: 2px solid #000;
+}
+
+footer .wrap > * {
+    margin-top: 1rem;
 }
 
 footer .soc-icons {
@@ -222,7 +248,8 @@ footer .soc-icons__icon {
 
 /* Fonts and icons */
 
-body {
+body,
+input {
     line-height: 1.6rem;
     font-family: 'Lato', Times, serif;
     font-size: 18px;
@@ -249,15 +276,28 @@ h4 {
     font-size: 1.2rem;
 }
 
+small {
+    font-size: 0.8rem;
+}
+
 .logo {
     text-transform: uppercase;
 }
 
-.page-head a,
-.company .add-nav a {
+.logo a {
+    text-decoration-line: none;
+}
+
+.page-head a {
     margin: 0 0.6rem;
     color: white;
 }
+
+.search > p,
+.search input {
+    font-size: 1.4rem;
+}
+
 
 body.home .home a,
 .page-head a:hover {
@@ -275,10 +315,37 @@ body.home .home a,
     content: none;
 }
 
+footer .add-nav a {
+    color: grey;
+}
+
+footer .add-nav a:hover {
+    color: red;
+}
+
+.soc-icons li {
+    margin-left: 1rem;
+}
+
+.soc-icons svg {
+    width: 2rem;
+    margin-left: 1rem;
+    fill: gray;
+    cursor: pointer;
+}
+.soc-icons svg:hover {
+    fill: red;
+}
+
+footer .soc-icons a {
+    font-size: 2rem;
+    color: var(--color-black);
+    text-decoration: none;
+    vertical-align: middle;
+}
 
 @media screen and (min-width: 1086px) {
-    .page-head .main-nav a,
-    .soc-icons a {
+    .page-head .main-nav a {
         font-size: 2rem;
         color: var(--color-black);
         text-decoration: none;
@@ -358,8 +425,16 @@ footer .social li {
 
 /* Extra small display */
 
-@media screen and (min-width: 360px) {
-    
+@media screen and (max-width: 380px) {
+    .page-head .main-nav ul,
+    footer .add-nav ul {
+        font-size: 0.9rem;
+    }
+
+    .search > p,
+    .search input {
+        font-size: 1rem;
+    }
 }
 
 

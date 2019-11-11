@@ -1,7 +1,8 @@
 /* Variables */
 
 :root {
-    --custom-gap: 3px;
+    --custom-gap: 5px;
+    --big-gap: 10px;
 
     --block-width: 360px;
 

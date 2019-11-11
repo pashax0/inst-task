@@ -25,5 +25,14 @@ body > footer {
 .wrap {
     max-width: 1920px;
     margin: 0 auto;
-    padding: var(--custom-gap);
+}
+
+
+input {
+    /* display: block;
+    width: 100%; */
+}
+
+input:focus{
+    outline: none;
 }
