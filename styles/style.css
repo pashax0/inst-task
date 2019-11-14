@@ -5,10 +5,6 @@ html, body {
     height: 100%;
 }
 
-.home {
-    display: flex;
-}
-
 .wrap {
     display: flex;
     flex-direction: column;
@@ -43,7 +39,7 @@ html, body {
 
 /* Header positioning */
 
-.wrap .page-head {
+.page-head {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row-reverse;
@@ -61,12 +57,12 @@ html, body {
     flex-wrap: wrap;
 }
 
-.main-nav li,
-.add-nav li {
+.page-head .main-nav__item,
+.page-footer .add-nav__item {
     display: inline-block;
 }
 
-.page-head .logo {
+.page-head__logo {
     width: 120px;
     height: 120px;
     margin: 0 auto;
@@ -80,26 +76,23 @@ html, body {
 
 /* Content positioning */
 
-.wrap .content {
+.content {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: stretch;
 }
 
-.wrap .page-header {
-    min-height: 240px;
-    border: 2px solid #000;
-}
-
-.wrap .page-header {
+.content .page-header {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
+    min-height: 240px;
+    border: 2px solid #000;
 }
 
-.page-header > h1 {
+.content .page-header > h1 {
     position: absolute;
     top: 0;
     left: 0;
@@ -121,22 +114,22 @@ html, body {
     border: 2px solid #000;
 }
 
-.articles > article.greet {
+.articles > article.article__greet {
     order: 3;
 }
 
-.articles > article.info {
+.articles > article.article__info {
     order: 1;
 }
 
-.articles > article.news {
+.articles > article.article__news {
     order: 2;
 }
 
 
 /* Search block */
 
-.wrap .search {
+.content .send-mail {
     display: flex;
     flex-wrap: wrap;
     justify-content: flex-end;
@@ -144,7 +137,7 @@ html, body {
     margin-bottom: 2rem;
 }
 
-.wrap .search form {
+.content .send-mail__form {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
@@ -152,18 +145,18 @@ html, body {
     max-width: 490px;
 }
 
-.search > p {
+.content .send-mail__legend {
     flex-grow: 1;
     margin-bottom: 1rem;
 }
 
-.search input[type="search"] {
+.content .send-mail input[type="email"] {
     max-width: 350px;
     flex-basis: 350px;
     border: 2px solid black;
 }
 
-.search input[type="submit"] {
+.content .send-mail input[type="submit"] {
     padding: 0 1rem;
     border: 2px solid black;
     border-radius: 5px;
@@ -173,7 +166,7 @@ html, body {
 
 /* Footer positioning */
 
-.wrap > footer {
+.page-footer {
     padding-top: 1rem;
     display: flex;
     flex-wrap: wrap;
@@ -181,11 +174,11 @@ html, body {
     border-top: 2px solid #000;
 }
 
-.wrap footer > * {
+.page-footer > * {
     margin-top: 1rem;
 }
 
-.wrap footer .soc-icons {
+.page-footer .soc-icons {
     flex-grow: 1;
     display: flex;
     justify-content: flex-end;
@@ -224,21 +217,21 @@ html, body {
     font-size: 0.8rem;
 }
 
-.wrap .logo {
+.page-head__logo {
     text-transform: uppercase;
 }
 
-.wrap .logo a {
+.page-head__logo a {
     text-decoration-line: none;
 }
 
-.wrap .page-head a {
+.page-head a {
     margin: 0 0.6rem;
     color: black;
 }
 
-.wrap .search > p,
-.wrap .search input {
+.content .send-mail__legend,
+.content .send-mail input {
     font-size: 1.4rem;
 }
 
@@ -249,55 +242,56 @@ html, body {
     color: red;
 }
 
-.page-head .main-nav li::before,
-.company .add-nav li::before {
+.page-head .main-nav__item::before,
+.company .add-nav__item::before {
     content: '|';
 }
 
-.page-head .main-nav li:first-child::before,
-.company .add-nav li:first-child::before {
+.page-head .main-nav__item:first-child::before,
+.company .add-nav__item:first-child::before {
     content: none;
 }
 
-.wrap footer .add-nav a {
+.page-footer .add-nav a {
     color: grey;
 }
 
-.wrap footer .add-nav a:hover {
+.page-footer .add-nav a:hover {
     color: red;
 }
 
-.wrap .soc-icons li {
+.page-footer .soc-icons li {
     margin-left: 1rem;
 }
 
-.wrap .soc-icons svg {
+.page-footer .soc-icons svg {
     width: 2rem;
     margin-left: 1rem;
     fill: gray;
     cursor: pointer;
 }
 
-.wrap .soc-icons svg:hover {
+.page-footer .soc-icons svg:hover {
     fill: red;
 }
 
-.wrap footer .soc-icons a {
+.page-footer .soc-icons a {
     font-size: 2rem;
     color: rgb(0, 0, 0);
     text-decoration: none;
     vertical-align: middle;
 }
 
+
 @media screen and (max-width: 319px) {
-    .wrap .search form {
+    .content .send-mail__form {
         flex-wrap: wrap;
     }
 }
 
 @media screen and (max-width: 375px) {
-    .wrap .search > p,
-    .wrap .search input {
+    .content .send-mail__legend,
+    .content .send-mail input {
         font-size: 1rem;
     }
 }
@@ -305,12 +299,12 @@ html, body {
 
 @media screen and (min-width: 426px) {
 
-    .wrap .page-header h1 {
+    .page-header h1 {
         margin: 3rem;
         line-height: 1;
     }
 
-    .wrap .articles > article {
+    .articles > article {
         padding: 12px;
     }
 }
@@ -320,12 +314,12 @@ html, body {
         padding: 30px;
     }
 
-    .page-head > .main-nav {
+    .page-head .main-nav {
         justify-content: flex-start;
         margin-left: 2rem;
     }
 
-    .search > p {
+    .content .send-mail__legend {
         flex-grow: 0;
         margin-right: 1rem;
     }
@@ -369,15 +363,15 @@ html, body {
         margin-right: 0;
     }
 
-    .articles > article.greet {
+    .articles > article.article__greet {
         order: 1;
     }
 
-    .articles > article.info {
+    .articles > article.article__info {
         order: 2;
     }
 
-    .articles > article.news {
+    .articles > article.article__news {
         order: 2;
     }
 
@@ -401,7 +395,7 @@ html, body {
         vertical-align: middle;
     }
 
-    .page-head .main-nav li::before {
+    .page-head .main-nav__item::before {
         content: none;
     }
 
@@ -421,7 +415,7 @@ html, body {
         content: url('../assets/images/info-circle-solid.svg');
     }
 
-    .page-header h1 {
+    .content .page-header h1 {
         margin: 30px;
     }
 }
@@ -457,7 +451,7 @@ html, body {
         border: 2px solid #000;
     }
 
-    .page-head .logo {
+    .page-head__logo {
         margin: 0 auto 2rem;
     }
 
@@ -465,7 +459,7 @@ html, body {
         display: block;
     }
 
-    .page-head .main-nav li {
+    .page-head .main-nav__item {
         display: block;
         margin: 1rem 0;
     }
