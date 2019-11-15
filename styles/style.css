@@ -12,15 +12,8 @@
     box-sizing: border-box;
 }
 
-.wrap input:focus {
+.wrap input {
     outline: none;
-}
-
-.wrap article ,
-.page-head,
-.page-header,
-.main-nav {
-    margin-bottom: 2rem;
 }
 
 
@@ -141,7 +134,9 @@
 }
 
 .content .send-mail input[type="submit"] {
+    margin-left: .5rem;
     padding: 0 1rem;
+    background-color: rgb(190, 190, 190);
     border: 2px solid black;
     border-radius: 5px;
     font-size: 1.125em;
@@ -269,7 +264,6 @@
 
 .page-footer .soc-icons svg {
     width: 2em;
-    margin-left: 1em;
     fill: rgb(65, 65, 65);
     cursor: pointer;
 }
@@ -279,6 +273,7 @@
 }
 
 .page-footer .soc-icons a {
+    margin-left: 1em;
     color: rgb(0, 0, 0);
     text-decoration: none;
     vertical-align: middle;
@@ -287,6 +282,10 @@
 @media screen and (max-width: 375px) {
     .content .send-mail__form {
         flex-wrap: wrap;
+    }
+
+    .content .send-mail input[type="submit"] {
+        margin-left: 0;
     }
 }
 
