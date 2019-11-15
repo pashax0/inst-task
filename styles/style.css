@@ -12,10 +12,6 @@
     box-sizing: border-box;
 }
 
-.wrap input:focus {
-    outline: none;
-}
-
 .wrap article ,
 .page-head,
 .page-header,
