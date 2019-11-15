@@ -1,16 +1,11 @@
 /* Common styling */
 
-
-html, body {
-    height: 100%;
-}
-
 .wrap {
     display: flex;
     flex-direction: column;
     max-width: 1920px;
     margin: 0 auto;
-    padding: 5px;
+    padding: .5em;
 }
 
 .wrap * {
@@ -19,14 +14,6 @@ html, body {
 
 .wrap input:focus {
     outline: none;
-}
-
-.wrap > .content {
-    flex-grow: 1;
-}
-
-.wrap > footer {
-    flex-shrink: 0;
 }
 
 .wrap article ,
@@ -88,15 +75,8 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 240px;
+    min-height: 16em;
     border: 2px solid #000;
-}
-
-.content .page-header > h1 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: 5px;
 }
 
 .content .articles {
@@ -108,8 +88,7 @@ html, body {
 .articles article {
     min-height: 240px;
     flex-grow: 1;
-    margin-bottom: 2rem;
-    padding: 5px;
+    padding: .5em;
     flex-basis: 380px;
     border: 2px solid #000;
 }
@@ -142,7 +121,7 @@ html, body {
     flex-wrap: nowrap;
     justify-content: space-between;
     flex-grow: 1;
-    max-width: 490px;
+    max-width: 520px;
 }
 
 .content .send-mail__legend {
@@ -150,9 +129,14 @@ html, body {
     margin-bottom: 1rem;
 }
 
+.content .send-mail input {
+    margin-bottom: 1rem;
+}
+
 .content .send-mail input[type="email"] {
-    max-width: 350px;
     flex-basis: 350px;
+    flex-grow: 1;
+    padding-left: .5em;
     border: 2px solid black;
 }
 
@@ -160,7 +144,12 @@ html, body {
     padding: 0 1rem;
     border: 2px solid black;
     border-radius: 5px;
+    font-size: 1.125em;
     cursor: pointer;
+}
+
+.content .send-mail input[type="email"]:focus {
+    color: blue;
 }
 
 
@@ -189,9 +178,25 @@ html, body {
 
 .wrap,
 .wrap input {
-    line-height: 1.6;
     font-family: 'Lato', Times, serif;
-    font-size: 18px;
+    line-height: 1.6;
+}
+
+.page-head,
+.content,
+.page-footer {
+    font-size: 1.125em;
+}
+
+.page-head__logo a {
+    font-size: 1.25rem;
+}
+
+.content .page-header > h1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: .25em;
 }
 
 .wrap h1,
@@ -202,19 +207,19 @@ html, body {
 }
 
 .wrap h1 {
-    font-size: 2rem;
+    font-size: 2em;
 }
 
 .wrap h2 {
-    font-size: 1.6rem;
+    font-size: 1.6em;
 }
 
 .wrap h3 {
-    font-size: 1.4rem;
+    font-size: 1.4em;
 }
 
 .wrap small {
-    font-size: 0.8rem;
+    font-size: 0.8em;
 }
 
 .page-head__logo {
@@ -232,14 +237,12 @@ html, body {
 
 .content .send-mail__legend,
 .content .send-mail input {
-    font-size: 1.4rem;
+    font-size: 1em;
 }
 
-
 .wrap.home .main-nav__item.home a,
-.page-head a:hover {
-    margin: 0 0.6rem;
-    color: red;
+.page-head .main-nav__item a:hover {
+    color: blue;
 }
 
 .page-head .main-nav__item::before,
@@ -253,11 +256,11 @@ html, body {
 }
 
 .page-footer .add-nav a {
-    color: grey;
+    color: rgb(65, 65, 65);
 }
 
 .page-footer .add-nav a:hover {
-    color: red;
+    color: blue;
 }
 
 .page-footer .soc-icons li {
@@ -265,58 +268,53 @@ html, body {
 }
 
 .page-footer .soc-icons svg {
-    width: 2rem;
-    margin-left: 1rem;
-    fill: gray;
+    width: 2em;
+    margin-left: 1em;
+    fill: rgb(65, 65, 65);
     cursor: pointer;
 }
 
 .page-footer .soc-icons svg:hover {
-    fill: red;
+    fill: blue;
 }
 
 .page-footer .soc-icons a {
-    font-size: 2rem;
     color: rgb(0, 0, 0);
     text-decoration: none;
     vertical-align: middle;
 }
 
-
-@media screen and (max-width: 319px) {
+@media screen and (max-width: 375px) {
     .content .send-mail__form {
         flex-wrap: wrap;
     }
 }
 
-@media screen and (max-width: 375px) {
-    .content .send-mail__legend,
-    .content .send-mail input {
-        font-size: 1rem;
-    }
-}
-
-
 @media screen and (min-width: 426px) {
 
-    .page-header h1 {
-        margin: 3rem;
+    .content .page-header > h1 {
+        margin: 1em;
         line-height: 1;
-    }
-
-    .articles > article {
-        padding: 12px;
     }
 }
 
 @media screen and (min-width: 769px) {
     .wrap {
-        padding: 30px;
+        padding: 2rem;
+    }
+
+    .page-head,
+    .page-footer {
+        font-size: 1.4em;
     }
 
     .page-head .main-nav {
         justify-content: flex-start;
         margin-left: 2rem;
+    }
+
+    .content {
+        font-size: 1.5em;
     }
 
     .content .send-mail__legend {
@@ -325,8 +323,9 @@ html, body {
     }
 
     .articles article {
-        flex-basis: 338px;
+        flex-basis: 336px;
         margin-right: 2rem;
+        padding: 1em;
     }
 
     .articles article:nth-child(2n) {
@@ -336,13 +335,14 @@ html, body {
     .articles article:last-child {
         max-width: calc(50% - 1rem);
     }
-
-    .wrap p {
-        font-size: 1.4rem;
-    }
 }
 
 @media screen and (min-width: 1025px) {
+    .page-head,
+    .page-footer {
+        font-size: 2rem;
+    }
+
     .page-head .main-nav {
         justify-content: space-between;
         margin-right: 0;
@@ -354,7 +354,7 @@ html, body {
     }
 
     .articles article {
-        flex-basis: 279px;
+        flex-basis: 277px;
         margin-right: 4rem;
         margin-left: 0;
     }
@@ -376,7 +376,6 @@ html, body {
     }
 
     .page-head .main-nav a {
-        font-size: 2rem;
         color: rgb(0, 0, 0);
         text-decoration: none;
         vertical-align: middle;
@@ -384,7 +383,7 @@ html, body {
     
     .page-head .main-nav a:hover,
     .soc-icons a:hover {
-        color: red;
+        color: blue;
     }
 
     .page-head .main-nav a::before {
@@ -414,10 +413,6 @@ html, body {
     .page-head .main-nav .about a::before {
         content: url('../assets/images/info-circle-solid.svg');
     }
-
-    .content .page-header h1 {
-        margin: 30px;
-    }
 }
 
 @media screen and (min-width: 1441px) {
@@ -429,7 +424,8 @@ html, body {
 
     .wrap > .content {
         flex-basis: 1080px;
-        margin-left: 40px;
+        flex-grow: 1;
+        margin-left: 2rem;
     }
 
     .wrap > footer {
@@ -437,7 +433,7 @@ html, body {
         flex-grow: 1;
     }
 
-    .wrap .page-head {
+    .page-head {
         max-width: 300px;
         margin: 0;
         flex-direction: column;
@@ -445,7 +441,7 @@ html, body {
         align-items: center;
     }
 
-    .wrap .page-head .main-nav {
+    .page-head .main-nav {
         flex-grow: 0;
         order: 2;
         border: 2px solid #000;
