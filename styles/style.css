@@ -12,8 +12,15 @@
     box-sizing: border-box;
 }
 
-.wrap input {
+.wrap input:focus {
     outline: none;
+}
+
+.wrap article ,
+.page-head,
+.page-header,
+.main-nav {
+    margin-bottom: 2rem;
 }
 
 
@@ -256,10 +263,6 @@
 
 .page-footer .add-nav a:hover {
     color: blue;
-}
-
-.page-footer .soc-icons li {
-    margin-left: 1rem;
 }
 
 .page-footer .soc-icons svg {
